@@ -1,74 +1,138 @@
 # ============================================================================
 #  NAKŁADKA ANGIELSKA. Tu wpisujesz TYLKO pola, które różnią się od cv.yaml.
-#  Wszystko inne (telefon, e-mail, linki, daty, tagi umiejętności, stack,
-#  tytuły/autorzy książek) DZIEDZICZY SIĘ automatycznie z cv.yaml.
+#  Wszystko inne (e-mail, linki, daty, tagi umiejętności, stack, tytuły
+#  i autorzy książek) DZIEDZICZY SIĘ automatycznie z cv.yaml.
 #
 #  Scalanie tablic jest WG INDEKSU — zachowuj tę samą kolejność i liczbę
-#  wpisów co w cv.yaml. Wpis pominięty = zostaje wersja polska (fallback).
+#  wpisów co w cv.yaml. Wpis pominięty (`- {}`) = zostaje wersja polska.
+#  Nadmiarowe wpisy z końca cv.yaml dziedziczą się same, więc nakładka
+#  może być krótsza od bazy.
 # ============================================================================
 
 basics:
-  title: Fullstack Developer (.NET / Angular)
-  location: Poland
+  # name / title / website / contact / links — dziedziczą (neutralne językowo).
+  location: Siedlce, Poland
   summary: >
-    Software developer specialising in web applications within the .NET and
-    Angular ecosystem. I focus on clean, readable code based on proven patterns
-    (Clean Architecture, DDD). I continuously expand my knowledge of software
-    architecture through training, certifications and technical literature.
+    Holistic developer in the .NET, Azure and Angular world. I take part in the
+    whole software development lifecycle. I value partnership-based relationships with
+    clients. I work in the spirit of DDD — I put a thorough understanding of the
+    business domain, analysis and design above technological solutions.
 
+# ----------------------------------------------------------------------------
+# Doświadczenie — role 1 i 2 są już po angielsku, więc tłumaczymy tylko punkty.
+# ----------------------------------------------------------------------------
 experience:
-  - role: Fullstack Developer
-    punkty:
-      - Development of a web application for running simulations.
-      - Writing unit tests.
+  - punkty:
+      - Domain — a system supporting the management of a fitness club chain
+      - Designing and developing the architecture and infrastructure
+      - Working with business stakeholders to refine requirements and design solutions
+      - Analysis and modelling
+      - Developing new features and maintaining the system
+      - Rolling out observability (monitoring, alerting, logging, tracing) across the system
+      - Migration from App Service/VMs to modern infrastructure based on Kubernetes, IaC and GitOps
+      - Mentoring
+      - Internal training on AI, software archetypes and observability
+  - punkty:
+      - Building a system for running medical simulations
   - role: Internship – Developer
     punkty:
-      - Web application supporting employee case management.
-      - Writing technical documentation.
+      - Web application supporting employee case management
 
+# ----------------------------------------------------------------------------
+# Wykształcenie — uczelnia w oficjalnej nazwie angielskiej.
+# ----------------------------------------------------------------------------
 education:
   - stopien: Master's degree
     kierunek: Computer Science
+    uczelnia: Siedlce University of Natural Sciences and Humanities
   - stopien: Engineer's degree (BSc)
     kierunek: Computer Science
+    uczelnia: Siedlce University of Natural Sciences and Humanities
 
+# ----------------------------------------------------------------------------
+# Umiejętności — tłumaczymy nazwy kategorii i te pozycje, które nie są
+# terminami angielskimi. Kategorie 1–3 i 5 (AI) dziedziczą bez zmian.
+# ----------------------------------------------------------------------------
 skills:
-  - kategoria: Backend
-  - kategoria: Frontend
-  - kategoria: Practices & tools
-    pozycje: ["Clean Architecture", "DDD", "Unit testing", "Git", "Redmine"]
+  - {} # Backend
+  - {} # DevOps / Cloud
+  - {} # Frontend
+  - kategoria: Architecture & design
+    pozycje: ["DDD", "Event storming", "Software archetypes", "Microservices", "Event sourcing", "Event Driven Architecture", "Modular monolith"]
+  # - AI — dziedziczy
 
-# Przykładowe wpisy — przetłumaczone nazwy. Podmień/usuń razem z cv.yaml.
+# ----------------------------------------------------------------------------
+# Certyfikaty (wpis poglądowy — podmień razem z cv.yaml)
+# ----------------------------------------------------------------------------
 certyfikaty:
   - nazwa: "Example: AZ-204 Developing Solutions for Microsoft Azure"
 
+# ----------------------------------------------------------------------------
+# Szkolenia — nazwy kursów to nazwy własne (polskie produkty szkoleniowe),
+# więc zostają, a w nawiasie dodajemy angielskie znaczenie.
+# Kursy o angielskich nazwach dziedziczą bez zmian.
+# ----------------------------------------------------------------------------
 szkolenia:
-  - nazwa: "Example: Domain-Driven Design Fundamentals"
+  - nazwa: "Architekt Jutra (Architect of Tomorrow)"
+  - nazwa: "Archetypy Oprogramowania (Software Archetypes)"
+  - nazwa: "Droga Nowoczesnego Architekta (The Modern Architect's Path)"
+  - {} # Domain Drivers
+  - nazwa: "Horyzont Lidera (The Leader's Horizon)"
+  - {} # Legacy Fighter
+  - nazwa: "Messaging: Pragmatycznie (Messaging: Pragmatically)"
+  - nazwa: "Domain Driven Design: Pragmatycznie (DDD: Pragmatically)"
+  - nazwa: "Modularny Monolit (Modular Monolith)"
+  - nazwa: "Mikroserwisy .NET (.NET Microservices)"
+  # - Automation Maestro — dziedziczy
+  # - Kubernetes Maestro — dziedziczy
 
-# Projekty — tłumaczymy tylko nazwę i opis; stack/url/rok dziedziczą z cv.yaml.
+# ----------------------------------------------------------------------------
+# Projekty — tłumaczymy tylko opis; nazwa, stack i url dziedziczą z cv.yaml.
+# ----------------------------------------------------------------------------
 projekty:
-  - nazwa: "Example: CV as code"
-    opis: "Generator of a versioned CV from YAML to HTML and PDF, bilingual, auto-deployed to GitHub Pages."
+  - opis: "Web application for generating personalised Christmas gift lists, with group collaboration and OpenAI API integration."
 
-# ksiazki — pominięte celowo: tytuły i autorzy są neutralne (dziedziczą z cv.yaml).
+# ----------------------------------------------------------------------------
+# Książki — tytuły i autorzy są neutralne (dziedziczą). Wyjątek: pozycja nr 8
+# to polskie wydanie, więc wstawiamy oryginalny tytuł angielski.
+# ----------------------------------------------------------------------------
+ksiazki:
+  - {}
+  - {}
+  - {}
+  - {}
+  - {}
+  - {}
+  - {}
+  - tytul: ".NET Microservices: Architecture for Containerized .NET Applications"
 
-# Źródła wiedzy — tłumaczymy nazwę, typ i opis; url dziedziczy z cv.yaml.
+# ----------------------------------------------------------------------------
+# Źródła wiedzy — tłumaczymy typ i te nazwy, które nie są nazwami własnymi.
+# ----------------------------------------------------------------------------
 zrodla_wiedzy:
-  - nazwa: "Example: Microsoft Learn"
-    typ: documentation
-    opis: "Official documentation and learning paths for .NET and Azure."
+  - typ: various # Bottega IT Minds
+  - {} # DevStyle
+  - {} # Better Software Design
+  - {} # Patoarchitekci
+  - nazwa: "Oskar Dudycz — Pragmatically about programming"
+  # - DevMentors — dziedziczy
+  # - CodeOpinion — dziedziczy
 
+# ----------------------------------------------------------------------------
+# Języki obce
+# ----------------------------------------------------------------------------
 jezyki:
   - jezyk: English
-    poziom: B2
   - jezyk: Polish
     poziom: native
 
+# ----------------------------------------------------------------------------
+# Zainteresowania
+# ----------------------------------------------------------------------------
 zainteresowania:
   - software architecture
-  - problem solving
-  - playing the accordion
-  - board games
-  - chess
+  - bodybuilding
+  - esports
+  - board games and social deduction games
 
-# Klauzula RODO (EN) -> cv.private.en.yaml (gitignored).
+# Klauzula RODO (EN) -> cv.private.en.yaml (gitignored, tylko wariant "full").

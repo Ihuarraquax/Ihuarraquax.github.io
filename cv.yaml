@@ -131,6 +131,12 @@ szkolenia:
   - nazwa: "Mikroserwisy .NET"
     organizator: DevMentors
     url: "https://devmentors.io/kurs/mikroserwisy-net/"
+  - nazwa: "Automation Maestro"
+    organizator: WKONTENERACH
+    url: "https://automationmaestro.pl/"
+  - nazwa: "Kubernetes Maestro"
+    organizator: WKONTENERACH
+    url: "https://kubernetesmaestro.pl/"
 
 # ----------------------------------------------------------------------------
 # Projekty — pokaż, co zbudowałeś (pet-projekty, open source, zadania rekrut.).
@@ -141,7 +147,6 @@ projekty:
     opis: "Aplikacja webowa do generowania spersonalizowanych list prezentów świątecznych, z możliwością współpracy w grupie i integracją z API OpenAI."
     stack: [".NET", "Angular", "OpenAI"]
     url: "https://github.com/Ihuarraquax/santavibe"           # link do repo / demo (opcjonalnie)
-    rok: 2025
 
 # ----------------------------------------------------------------------------
 # Przeczytane książki — buduj swoją reading list jako dowód rozwoju.
@@ -171,6 +176,24 @@ ksiazki:
 #       url, opis (1 zdanie — czego dotyczy / czego się z niego nauczyłeś)
 # ----------------------------------------------------------------------------
 zrodla_wiedzy:
+  - nazwa: "Bottega IT Minds"
+    typ: różne
+    url: "https://bottega.com.pl/"
+  - nazwa: "DevStyle"
+    typ: podcast
+    url: "https://devstyle.pl/category/podcast"
+  - nazwa: "Better Software Design"
+    typ: podcast
+    url: "https://bettersoftwaredesign.pl/"
+  - nazwa: "Patoarchitekci"
+    typ: podcast
+    url: "https://patoarchitekci.io/"
+  - nazwa: "Oskar Dudycz - Pragmatycznie o programowaniu"
+    typ: blog
+    url: "https://event-driven.io/pl/"
+  - nazwa: "DevMentors"
+    typ: youtube
+    url: "https://www.youtube.com/@DevMentorsPL"
   - nazwa: "CodeOpinion"
     typ: youtube
     url: "https://www.youtube.com/@CodeOpinion"
