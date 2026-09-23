@@ -26,8 +26,7 @@ experience:
       - Domain — a system supporting the management of a fitness club chain
       - Designing and developing the architecture and infrastructure
       - Working with business stakeholders to refine requirements and design solutions
-      - Analysis and modelling
-      - Developing new features and maintaining the system
+      - Analysis, modeling, development of new features and system maintenance
       - Rolling out observability (monitoring, alerting, logging, tracing) across the system
       - Migration from App Service/VMs to modern infrastructure based on Kubernetes, IaC and GitOps
       - Mentoring

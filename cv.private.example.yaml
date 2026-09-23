@@ -6,6 +6,8 @@
 # ============================================================================
 
 basics:
+  # Data urodzenia "YYYY-MM-DD" — w CV renderuje się wyłącznie wyliczony wiek.
+  birthDate: "1900-01-01"
   contact:
     phone: "+48 000 000 000"
 

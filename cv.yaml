@@ -13,6 +13,8 @@ basics:
   # Adres strony-wizytówki (GitHub Pages). W CV pojawia się jako elegancki
   # odsyłacz "po więcej" (certyfikaty, projekty, książki, źródła wiedzy).
   website: https://ihuarraquax.github.io
+  # Zdjęcie profilowe: ścieżka względem katalogu repo (plik kopiowany do dist/ i private/).
+  photo: assets/foto.png
   contact:
     # Telefon jest daną wrażliwą -> mieszka w cv.private.yaml (gitignored).
     email: hzablocki97@gmail.com
@@ -35,26 +37,20 @@ experience:
       - Domena - System wspomagający zarządzanie siecią klubów fitness
       - Projektowanie i rozwój architektury i infrastruktury
       - Współpraca z interesariuszami biznesowymi w celu doprecyzowania wymagań i zaprojektowania rozwiązań
-      - Analiza i modelowanie
-      - Development nowych funkcjonalności i utrzymywanie systemu
+      - Analiza, modelowanie, rozwój nowych funkcjonalności i utrzymanie systemu
       - Wdrożenie observability (monitoring, alerting, logowanie, tracing) w systemie
       - Migracja z App Service/VMs do nowoczesnej infrastruktury opartej na Kubernetes, IaC, GitOps
       - Mentoring
       - Wewnętrzne szkolenia z AI, Archetypów oprogramowania, Observability
   - role: Fullstack Developer
     company: BCODERS S.A.
-    data_od: "2020-09"
+    data_od: "2020-07"
     data_do: "2022-06"
     stack: [".NET", "Angular", "Xamarin", "DevExtreme"]
     punkty:
       - Tworzenie systemu do przeprowadzania symulacji medycznych
-  - role: Staż – Developer
-    company: BCODERS S.A.
-    data_od: "2020-07"
-    data_do: "2020-08"
-    stack: [".NET", "Angular", "DevExtreme"]
-    punkty:
       - Aplikacja webowa wspierająca zarządzanie sprawami pracowniczymi
+      
 
 # ----------------------------------------------------------------------------
 # Wykształcenie
@@ -84,18 +80,7 @@ skills:
   - kategoria: Architektura i projektowanie
     pozycje: ["DDD", "Event storming", "Archetypy oprogramowania", "Mikroserwisy", "Event sourcing", "Event Driven Architecture", "Modularny monolit" ]
   - kategoria: AI
-    pozycje: ["Claude Code"]
-
-# ----------------------------------------------------------------------------
-# Certyfikaty — Twoja wizytówka. Dopisuj nowe na górze.
-# (przykładowe wpisy poniżej — podmień na swoje albo usuń)
-# ----------------------------------------------------------------------------
-certyfikaty:
-  - nazwa: "Przykład: AZ-204 Developing Solutions for Microsoft Azure"
-    wydawca: Microsoft
-    data: "2024-03"
-    id: ""          # numer / ID certyfikatu (opcjonalnie)
-    url: ""         # link weryfikacyjny (opcjonalnie)
+    pozycje: ["Claude Code", "Agentic workflows"]
 
 # ----------------------------------------------------------------------------
 # Szkolenia / kursy (z certyfikatem ukończenia lub bez)

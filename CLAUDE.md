@@ -15,7 +15,7 @@ szkoleniami, projektami i przeczytanymi książkami**. Wynik: publiczna
 
 - **`web`** → `dist/` — **publiczna wizytówka, BEZ danych wrażliwych**, z sekcjami
   szczegółowymi (certyfikaty, szkolenia, projekty, książki, źródła wiedzy). Kontakt =
-  tylko e-mail + linki (GitHub/LinkedIn); BEZ telefonu, lokalizacji, wykształcenia,
+  tylko e-mail + linki (GitHub/LinkedIn); BEZ wieku, telefonu, lokalizacji, wykształcenia,
   języków, zainteresowań i RODO. To jedyne, co trafia na GitHub Pages.
 - **`full`** → `private/` — **zwięzłe CV na 1 stronę A4** (źródło PDF dla rekruterów).
   Zawiera: doświadczenie, umiejętności, wykształcenie, języki, zainteresowania, RODO
@@ -41,8 +41,8 @@ Cała treść mieszka w **`cv.yaml`**. Szablon i style tylko ją renderują.
 
 ### Dane wrażliwe (repo jest PUBLICZNE)
 
-Repozytorium jest publiczne na GitHubie, więc **`cv.yaml` też jest publiczny**. Telefon
-i klauzula RODO NIE mogą tam wrócić — mieszkają w `cv.private.yaml`
+Repozytorium jest publiczne na GitHubie, więc **`cv.yaml` też jest publiczny**. Telefon,
+data urodzenia i klauzula RODO NIE mogą tam wrócić — mieszkają w `cv.private.yaml`
 (+ `cv.private.<kod>.yaml` dla tłumaczeń), który jest w `.gitignore`.
 `build.mjs` scala tę nakładkę **wyłącznie na wariant `full`**; gdy plików nie ma
 (tak jest w CI na GitHub Actions), build przechodzi normalnie, a pola po prostu znikają.
@@ -66,7 +66,7 @@ dist/ ──► .github/workflows/deploy.yml ──► GitHub Pages   (private/ 
 |---|---|
 | `cv.yaml` | **Bazowe źródło treści (PL).** Każda sekcja to lista wpisów. |
 | `cv.en.yaml` | Nakładka EN: tylko pola różniące się od `cv.yaml` (reszta dziedziczy). |
-| `cv.private.yaml` | **Dane wrażliwe (telefon, RODO). Gitignored.** Scalane TYLKO na wariant `full`. Wzór: `cv.private.example.yaml`. |
+| `cv.private.yaml` | **Dane wrażliwe (telefon, data urodzenia, RODO). Gitignored.** Scalane TYLKO na wariant `full`. Wzór: `cv.private.example.yaml`. |
 | `cv.private.en.yaml` | Tłumaczenia pól wrażliwych (EN). Też gitignored. |
 | `src/template.mjs` | Dane → HTML + słownik etykiet `LABELS` (i18n). Funkcja `render(data, opts)`. |
 | `src/style.css` | Wygląd ekran + druk A4 (`@media print`, `@page`). |
@@ -95,7 +95,7 @@ Sekcje top-level: `basics`, `experience`, `education`, `skills`, `certyfikaty`,
 
 Widoczność per wariant (patrz `SECTIONS` w `template.mjs`):
 - **`web`** (publiczne): `experience`, `skills`, `certyfikaty`, `szkolenia`, `projekty`,
-  `ksiazki`, `zrodla_wiedzy`. Nagłówek bez telefonu i lokalizacji.
+  `ksiazki`, `zrodla_wiedzy`. Nagłówek bez wieku, telefonu i lokalizacji.
 - **`full`** (PDF, 1 strona A4): `experience`, `skills`, `education`, `jezyki`,
   `zainteresowania` + `rodo` i pełny kontakt. BEZ sekcji szczegółowych — zamiast nich
   odsyłacz `.more` do `basics.website`. To jedyne miejsce z danymi wrażliwymi.
@@ -103,6 +103,9 @@ Widoczność per wariant (patrz `SECTIONS` w `template.mjs`):
 Pola nowych sekcji:
 - `basics.website`: adres strony-wizytówki (GitHub Pages). W CV (`full`) renderuje się
   jako odsyłacz `.more` „po więcej"; na stronie (`web`) jest pomijany (self-link).
+- `basics.birthDate` (**tylko `cv.private.yaml`**): data urodzenia `"YYYY-MM-DD"`. W nagłówku
+  CV (`full`) renderuje się wyłącznie wyliczony wiek (`ageFrom()` + odmiana `L.age()`);
+  sama data nigdy nie trafia do HTML. Liczone przy buildzie — nie wymaga zmian co rok.
 - `projekty[]`: `nazwa`, `opis` (1 zdanie), `stack` (lista), `url`, `rok` (opcjonalne).
 - `zrodla_wiedzy[]`: `nazwa`, `typ` (np. `blog`/`dokumentacja`/`kanał YouTube`), `url`, `opis`.
 
@@ -143,14 +146,15 @@ Konwencje pól:
    (screenshot `dist/index.html` = web, `private/index.html` = full, przez Playwright;
    lokalnie brak `pdftoppm`, więc PDF sprawdzaj zrzutem renderu HTML, nie czytaniem PDF).
    **Po zmianach przy danych: potwierdź, że `dist/` nie zawiera danych wrażliwych
-   (telefon, RODO, adres, wykształcenie) — to jedyne, co jest publiczne.**
+   (telefon, data urodzenia/wiek, RODO, adres, wykształcenie) — to jedyne, co jest publiczne.**
 4. **Nie psuj druku**: zmiany layoutu testuj też pod `@media print` (A4, podział stron).
 5. **Commituj po polsku**, prefiks `cv:` dla zmian treści (np. `cv: dodaj certyfikat AZ-204`).
 6. Nie wprowadzaj ciężkich zależności bez potrzeby — build ma być lekki (`js-yaml` to jedyna prod-zależność; Playwright jest dev-only).
 
 ## Dane niezmienne (z `old/CV_Hubert_Zablocki.pdf`)
 
-Hubert Zabłocki · hzablocki97@gmail.com · ang. B2 · (telefon: `cv.private.yaml`)
+Hubert Zabłocki · hzablocki97@gmail.com · ang. B2 · ur. 17.09.1997
+(telefon i data urodzenia: `cv.private.yaml`)
 inż. (2017–2021) i mgr (2021–) informatyki, Uniwersytet Przyrodniczo-Humanistyczny
 w Siedlcach. Pierwsze doświadczenie: BCODERS S.A. (staż 2020, potem Fullstack Dev).
 

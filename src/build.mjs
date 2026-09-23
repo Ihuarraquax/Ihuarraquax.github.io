@@ -3,7 +3,7 @@
 //  - "full" -> private/   (pełne CV ze wszystkimi danymi; źródło PDF; NIE deployowane)
 // Każdy wariant: index.html (PL) + <lang>/index.html dla nakładek + kopia style.css.
 import { readFileSync, writeFileSync, mkdirSync, copyFileSync, existsSync } from "node:fs";
-import { dirname, join } from "node:path";
+import { basename, dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import yaml from "js-yaml";
 import { render } from "./template.mjs";
@@ -78,9 +78,16 @@ const variants = [
 
 const css = join(root, "src", "style.css");
 
+// Zdjęcie profilowe (basics.photo w cv.yaml) — kopiowane do katalogu wariantu
+// obok index.html. Gdy pliku nie ma, render po prostu pomija zdjęcie.
+const photoSrc = base.basics?.photo ? join(root, base.basics.photo) : undefined;
+const photoName = photoSrc && existsSync(photoSrc) ? basename(photoSrc) : undefined;
+if (photoSrc && !photoName) console.warn(`! Pomijam zdjęcie — brak pliku: ${photoSrc}`);
+
 for (const { variant, outRoot } of variants) {
   mkdirSync(outRoot, { recursive: true });
   copyFileSync(css, join(outRoot, "style.css"));
+  if (photoName) copyFileSync(photoSrc, join(outRoot, photoName));
   for (const lang of langs) {
     const outDir = lang === PL ? outRoot : join(outRoot, lang);
     mkdirSync(outDir, { recursive: true });
@@ -88,6 +95,7 @@ for (const { variant, outRoot } of variants) {
       lang,
       variant,
       cssHref: lang === PL ? "style.css" : "../style.css",
+      photoHref: photoName ? (lang === PL ? photoName : `../${photoName}`) : undefined,
       langs: navFor(lang),
     });
     writeFileSync(join(outDir, "index.html"), html, "utf8");

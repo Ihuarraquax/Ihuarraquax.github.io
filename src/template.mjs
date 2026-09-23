@@ -17,6 +17,8 @@ const LABELS = {
     present: "obecnie",
     cvDownload: "Pobierz PDF",
     morePrefix: "Certyfikaty, szkolenia, projekty, książki i źródła wiedzy:",
+    // odmiana: 1 rok / 22 lata / 29 lat
+    age: (n) => `${n} ${n === 1 ? "rok" : (n % 10 >= 2 && n % 10 <= 4 && !(n % 100 >= 12 && n % 100 <= 14)) ? "lata" : "lat"}`,
   },
   en: {
     experience: "Professional experience",
@@ -32,6 +34,7 @@ const LABELS = {
     present: "present",
     cvDownload: "Download PDF",
     morePrefix: "Certifications, training, projects, books & resources:",
+    age: (n) => `${n} year${n === 1 ? "" : "s"} old`,
   },
 };
 
@@ -54,6 +57,18 @@ const fmtDate = (d, L) => {
   const m = /^(\d{4})-(\d{2})$/.exec(s);
   return m ? `${m[2]}.${m[1]}` : esc(d);
 };
+// Wiek z daty urodzenia "YYYY-MM-DD" — liczony przy każdym buildzie, więc
+// nie wymaga ręcznej aktualizacji. Zła/brakująca data -> undefined (pole znika).
+const ageFrom = (birth, now = new Date()) => {
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(birth ?? "").trim());
+  if (!m) return undefined;
+  const [, y, mo, d] = m.map(Number);
+  const hadBirthday =
+    now.getMonth() + 1 > mo || (now.getMonth() + 1 === mo && now.getDate() >= d);
+  const age = now.getFullYear() - y - (hadBirthday ? 0 : 1);
+  return age >= 0 ? age : undefined;
+};
+
 const range = (od, doo, L) =>
   [fmtDate(od, L), fmtDate(doo, L)].filter(Boolean).join(" – ");
 
@@ -149,10 +164,14 @@ const langNav = (langs) =>
 // adres do pokazania: bez protokołu i końcowego "/"
 const displayUrl = (u) => String(u ?? "").replace(/^https?:\/\//, "").replace(/\/$/, "");
 
-// full=false (wariant web): bez telefonu i lokalizacji — tylko email i linki.
-const header = (b, langs, full, L) => {
+// full=false (wariant web): bez wieku, telefonu i lokalizacji — tylko email i linki.
+// photoHref: gotowy adres zdjęcia względem strony (build kopiuje plik obok index.html).
+const header = (b, langs, full, L, photoHref) => {
   const c = b.contact || {};
+  // wiek: dana wrażliwa (b.birthDate z cv.private.yaml) — tylko wariant "full"
+  const age = full ? ageFrom(b.birthDate) : undefined;
   const bits = [
+    age !== undefined ? `<span>${esc(L.age(age))}</span>` : "",
     full && c.phone ? `<a href="tel:${esc(c.phone.replace(/\s/g, ""))}">${esc(c.phone)}</a>` : "",
     c.email ? `<a href="mailto:${esc(c.email)}">${esc(c.email)}</a>` : "",
     ...(b.links || []).map((l) => `<a href="${esc(l.url)}">${esc(l.label)}</a>`),
@@ -162,15 +181,23 @@ const header = (b, langs, full, L) => {
   const more = full && b.website
     ? `<p class="more">${esc(L.morePrefix)} <a href="${esc(b.website)}">${esc(displayUrl(b.website))}</a></p>`
     : "";
+  const photo = photoHref
+    ? `<img class="photo" src="${esc(photoHref)}" alt="${esc(b.name)}" width="308" height="308">`
+    : "";
   return `
   <header class="cv-header">
     ${langNav(langs)}
-    <div class="identity">
-      <h1>${esc(b.name)}</h1>
-      ${b.title ? `<p class="role-title">${esc(b.title)}</p>` : ""}
+    <div class="head-main">
+      <div class="head-text">
+        <div class="identity">
+          <h1>${esc(b.name)}</h1>
+          ${b.title ? `<p class="role-title">${esc(b.title)}</p>` : ""}
+        </div>
+        <p class="contacts">${bits.join('<span class="sep">·</span>')}</p>
+        ${b.summary ? `<p class="summary">${esc(b.summary)}</p>` : ""}
+      </div>
+      ${photo}
     </div>
-    <p class="contacts">${bits.join('<span class="sep">·</span>')}</p>
-    ${b.summary ? `<p class="summary">${esc(b.summary)}</p>` : ""}
     ${more}
   </header>`;
 };
@@ -201,7 +228,7 @@ const SECTIONS = {
 
 /**
  * @param {object} data  - dane CV (po scaleniu z nakładką językową)
- * @param {object} opts  - { lang, cssHref, langs, variant: "web"|"full" }
+ * @param {object} opts  - { lang, cssHref, photoHref, langs, variant: "web"|"full" }
  */
 export function render(data, opts = {}) {
   const lang = opts.lang || "pl";
@@ -216,7 +243,7 @@ export function render(data, opts = {}) {
     .join("\n");
 
   const body = [
-    header(b, opts.langs, full, L),
+    header(b, opts.langs, full, L, opts.photoHref),
     sections,
     full && data.rodo ? `<footer class="rodo">${esc(data.rodo)}</footer>` : "",
   ].filter(Boolean).join("\n");
