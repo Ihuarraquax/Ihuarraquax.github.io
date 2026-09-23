@@ -137,6 +137,9 @@ szkolenia:
   - nazwa: "Kubernetes Maestro"
     organizator: WKONTENERACH
     url: "https://kubernetesmaestro.pl/"
+  - nazwa: "10xdevs.pl"
+    organizator: Przeprogramowani
+    url: "https://www.10xdevs.pl/"
 
 # ----------------------------------------------------------------------------
 # Projekty — pokaż, co zbudowałeś (pet-projekty, open source, zadania rekrut.).
@@ -167,6 +170,12 @@ ksiazki:
     autor: "Brendan Burns"
   - tytul: "Fundamentals of Software Architecture: A Modern Engineering Approach"
     autor: "Mark Richards, Neal Ford"
+  - tytul: "Enterprise Patterns and MDA: Building Better Software with Archetype Patterns and UML"
+    autor: "Jim Arlow, Ila Neustadt"
+  - tytul: "Analysis Patterns: Reusable Object Models"
+    autor: "Martin Fowler"
+  - tytul: "The Data Model Resource Book, Volume 1-3"
+    autor: "Len Silverston"
   - tytul: "Mikrousługi .NET: architektura konteneryzowanych aplikacji .NET"
     autor: "Microsoft"
 
@@ -197,6 +206,9 @@ zrodla_wiedzy:
   - nazwa: "CodeOpinion"
     typ: youtube
     url: "https://www.youtube.com/@CodeOpinion"
+  - nazwa: "Nick Chapsas"
+    typ: youtube
+    url: "https://www.youtube.com/@nickchapsas"
 
 # ----------------------------------------------------------------------------
 # Języki obce
