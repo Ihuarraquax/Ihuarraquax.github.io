@@ -1,0 +1,196 @@
+# ============================================================================
+#  CV — źródło prawdy. Edytuj TYLKO ten plik, potem `npm run build`.
+#  Każda sekcja to lista — żeby dodać wpis, dopisz kolejny element.
+#  Pola opcjonalne możesz usuwać; sekcja bez danych nie pojawi się w CV.
+# ============================================================================
+
+basics:
+  name: Hubert Zabłocki
+  title: Software Engineer (.NET / Angular / Azure)
+  summary: >
+    Wszechstronny programista w świecie .NET, Azure i Angular. Uczestniczę w całym cyklu życia oprogramowania. Cenie sobie partnerskie relacje z klientami. Działam w duchu DDD - stawiam dogłebne poznanie domeny biznesowej, analizę i projektowanie ponad rozwiązania technologiczne.
+  location: Siedlce, Polska
+  # Adres strony-wizytówki (GitHub Pages). W CV pojawia się jako elegancki
+  # odsyłacz "po więcej" (certyfikaty, projekty, książki, źródła wiedzy).
+  website: https://ihuarraquax.github.io
+  contact:
+    # Telefon jest daną wrażliwą -> mieszka w cv.private.yaml (gitignored).
+    email: hzablocki97@gmail.com
+  links:
+    - label: LinkedIn
+      url: https://www.linkedin.com/in/hubert-zablocki
+    - label: GitHub
+      url: https://github.com/Ihuarraquax
+
+# ----------------------------------------------------------------------------
+# Doświadczenie zawodowe (najnowsze na górze). data_do: "obecnie" dla aktualnej.
+# ----------------------------------------------------------------------------
+experience:
+  - role: Fullstack .NET/Angular Developer - Tech Lead
+    company: Qodeca
+    data_od: "2022-07"
+    data_do: "obecnie"
+    stack: [".NET", "Angular", "Azure", "Kubernetes", "Claude"]
+    punkty:
+      - Domena - System wspomagający zarządzanie siecią klubów fitness
+      - Projektowanie i rozwój architektury i infrastruktury
+      - Współpraca z interesariuszami biznesowymi w celu doprecyzowania wymagań i zaprojektowania rozwiązań
+      - Analiza i modelowanie
+      - Development nowych funkcjonalności i utrzymywanie systemu
+      - Wdrożenie observability (monitoring, alerting, logowanie, tracing) w systemie
+      - Migracja z App Service/VMs do nowoczesnej infrastruktury opartej na Kubernetes, IaC, GitOps
+      - Mentoring
+      - Wewnętrzne szkolenia z AI, Archetypów oprogramowania, Observability
+  - role: Fullstack Developer
+    company: BCODERS S.A.
+    data_od: "2020-09"
+    data_do: "2022-06"
+    stack: [".NET", "Angular", "Xamarin", "DevExtreme"]
+    punkty:
+      - Tworzenie systemu do przeprowadzania symulacji medycznych
+  - role: Staż – Developer
+    company: BCODERS S.A.
+    data_od: "2020-07"
+    data_do: "2020-08"
+    stack: [".NET", "Angular", "DevExtreme"]
+    punkty:
+      - Aplikacja webowa wspierająca zarządzanie sprawami pracowniczymi
+
+# ----------------------------------------------------------------------------
+# Wykształcenie
+# ----------------------------------------------------------------------------
+education:
+  - stopien: Magister
+    kierunek: Informatyka
+    uczelnia: Uniwersytet Przyrodniczo-Humanistyczny w Siedlcach
+    data_od: "2021-02"
+    data_do: "2023-02"
+  - stopien: Inżynier
+    kierunek: Informatyka
+    uczelnia: Uniwersytet Przyrodniczo-Humanistyczny w Siedlcach
+    data_od: "2017-09"
+    data_do: "2021-02"
+
+# ----------------------------------------------------------------------------
+# Umiejętności pogrupowane w kategorie
+# ----------------------------------------------------------------------------
+skills:
+  - kategoria: Backend
+    pozycje: [".NET", "EF Core", "TestContainers"]
+  - kategoria: DevOps / Cloud
+    pozycje: ["Azure", "Kubernetes", "Docker", "GitOps", "IaC", "LGTM stack", "OpenTelemetry"]
+  - kategoria: Frontend
+    pozycje: ["Angular"]
+  - kategoria: Architektura i projektowanie
+    pozycje: ["DDD", "Event storming", "Archetypy oprogramowania", "Mikroserwisy", "Event sourcing", "Event Driven Architecture", "Modularny monolit" ]
+  - kategoria: AI
+    pozycje: ["Claude Code"]
+
+# ----------------------------------------------------------------------------
+# Certyfikaty — Twoja wizytówka. Dopisuj nowe na górze.
+# (przykładowe wpisy poniżej — podmień na swoje albo usuń)
+# ----------------------------------------------------------------------------
+certyfikaty:
+  - nazwa: "Przykład: AZ-204 Developing Solutions for Microsoft Azure"
+    wydawca: Microsoft
+    data: "2024-03"
+    id: ""          # numer / ID certyfikatu (opcjonalnie)
+    url: ""         # link weryfikacyjny (opcjonalnie)
+
+# ----------------------------------------------------------------------------
+# Szkolenia / kursy (z certyfikatem ukończenia lub bez)
+# ----------------------------------------------------------------------------
+szkolenia:
+  - nazwa: "Architekt Jutra"
+    organizator: devstyle
+    url: "https://szkolenia.devstyle.pl/szkolenia/architekt-jutra.html"
+  - nazwa: "Archetypy Oprogramowania"
+    organizator: devstyle
+    url: "https://szkolenia.devstyle.pl/szkolenia/archetypy.html"
+  - nazwa: "Droga Nowoczesnego Architekta"
+    organizator: devstyle
+    url: "https://szkolenia.devstyle.pl/szkolenia/dna.html"
+  - nazwa: "Domain Drivers"
+    organizator: devstyle
+    url: "https://szkolenia.devstyle.pl/szkolenia/domain-drivers.html"
+  - nazwa: "Horyzont Lidera"
+    organizator: devstyle
+    url: "https://szkolenia.devstyle.pl/szkolenia/horyzont-lidera.html"
+  - nazwa: "Legacy Fighter"
+    organizator: devstyle
+    url: "https://szkolenia.devstyle.pl/szkolenia/legacy-fighter.html"
+  - nazwa: "Messaging: Pragmatycznie"
+    organizator: DevMentors
+    url: "https://messaging-pragmatycznie.pl/"
+  - nazwa: "Domain Driven Design: Pragmatycznie"
+    organizator: DevMentors
+    url: "https://domain-driven-design.net/"
+  - nazwa: "Modularny Monolit"
+    organizator: DevMentors
+    url: "https://devmentors.io/kurs/modularny-monolit/"
+  - nazwa: "Mikroserwisy .NET"
+    organizator: DevMentors
+    url: "https://devmentors.io/kurs/mikroserwisy-net/"
+
+# ----------------------------------------------------------------------------
+# Projekty — pokaż, co zbudowałeś (pet-projekty, open source, zadania rekrut.).
+# Pola: nazwa, opis (1 zdanie), stack (lista), url (repo/demo), rok (opcjonalne)
+# ----------------------------------------------------------------------------
+projekty:
+  - nazwa: "SantaVibe"
+    opis: "Aplikacja webowa do generowania spersonalizowanych list prezentów świątecznych, z możliwością współpracy w grupie i integracją z API OpenAI."
+    stack: [".NET", "Angular", "OpenAI"]
+    url: "https://github.com/Ihuarraquax/santavibe"           # link do repo / demo (opcjonalnie)
+    rok: 2025
+
+# ----------------------------------------------------------------------------
+# Przeczytane książki — buduj swoją reading list jako dowód rozwoju.
+# Pola: tytul, autor
+# ----------------------------------------------------------------------------
+ksiazki:
+  - tytul: "Domain-Driven Design: Tackling Complexity in the Heart of Software"
+    autor: "Robert C. Martin"
+  - tytul: "Learning Domain-Driven Design: Aligning Software Architecture and Business Strategy"
+    autor: "Vlad Khononov"
+  - tytul: "Designing Data-Intensive Applications: The Big Ideas Behind Reliable, Scalable, and Maintainable Systems"
+    autor: "Martin Kleppmann, Chris Riccomini"
+  - tytul: "Software Architecture: The Hard Parts: Modern Trade-Off Analyses for Distributed Architectures"
+    autor: "Neal Ford, Mark Richards, Pramod J. Sadalage, Zhamak Dehghani"
+  - tytul: "Building Event-Driven Microservices"
+    autor: "Adam Bellemare"
+  - tytul: "Designing Distributed Systems: Patterns and Paradigms for Scalable, Reliable Systems Using Kubernetes"
+    autor: "Brendan Burns"
+  - tytul: "Fundamentals of Software Architecture: A Modern Engineering Approach"
+    autor: "Mark Richards, Neal Ford"
+  - tytul: "Mikrousługi .NET: architektura konteneryzowanych aplikacji .NET"
+    autor: "Microsoft"
+
+# ----------------------------------------------------------------------------
+# Źródła wiedzy — miejsca/twórcy, z których nauczyłeś się najwięcej.
+# Pola: nazwa, typ (blog | kanał YouTube | podcast | dokumentacja | kurs...),
+#       url, opis (1 zdanie — czego dotyczy / czego się z niego nauczyłeś)
+# ----------------------------------------------------------------------------
+zrodla_wiedzy:
+  - nazwa: "CodeOpinion"
+    typ: youtube
+    url: "https://www.youtube.com/@CodeOpinion"
+
+# ----------------------------------------------------------------------------
+# Języki obce
+# ----------------------------------------------------------------------------
+jezyki:
+  - jezyk: Angielski
+    poziom: B2
+  - jezyk: Polski
+    poziom: ojczysty
+
+# ----------------------------------------------------------------------------
+# Zainteresowania (opcjonalne)
+# ----------------------------------------------------------------------------
+zainteresowania:
+  - architektura oprogramowania
+  - kulturystyka
+  - e-sport
+  - gry planszowe i dedukcyjno-społeczne
+
+# Klauzula RODO -> cv.private.yaml (gitignored, tylko wariant "full").

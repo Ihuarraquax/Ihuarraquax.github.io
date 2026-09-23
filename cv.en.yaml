@@ -1,0 +1,74 @@
+# ============================================================================
+#  NAKŁADKA ANGIELSKA. Tu wpisujesz TYLKO pola, które różnią się od cv.yaml.
+#  Wszystko inne (telefon, e-mail, linki, daty, tagi umiejętności, stack,
+#  tytuły/autorzy książek) DZIEDZICZY SIĘ automatycznie z cv.yaml.
+#
+#  Scalanie tablic jest WG INDEKSU — zachowuj tę samą kolejność i liczbę
+#  wpisów co w cv.yaml. Wpis pominięty = zostaje wersja polska (fallback).
+# ============================================================================
+
+basics:
+  title: Fullstack Developer (.NET / Angular)
+  location: Poland
+  summary: >
+    Software developer specialising in web applications within the .NET and
+    Angular ecosystem. I focus on clean, readable code based on proven patterns
+    (Clean Architecture, DDD). I continuously expand my knowledge of software
+    architecture through training, certifications and technical literature.
+
+experience:
+  - role: Fullstack Developer
+    punkty:
+      - Development of a web application for running simulations.
+      - Writing unit tests.
+  - role: Internship – Developer
+    punkty:
+      - Web application supporting employee case management.
+      - Writing technical documentation.
+
+education:
+  - stopien: Master's degree
+    kierunek: Computer Science
+  - stopien: Engineer's degree (BSc)
+    kierunek: Computer Science
+
+skills:
+  - kategoria: Backend
+  - kategoria: Frontend
+  - kategoria: Practices & tools
+    pozycje: ["Clean Architecture", "DDD", "Unit testing", "Git", "Redmine"]
+
+# Przykładowe wpisy — przetłumaczone nazwy. Podmień/usuń razem z cv.yaml.
+certyfikaty:
+  - nazwa: "Example: AZ-204 Developing Solutions for Microsoft Azure"
+
+szkolenia:
+  - nazwa: "Example: Domain-Driven Design Fundamentals"
+
+# Projekty — tłumaczymy tylko nazwę i opis; stack/url/rok dziedziczą z cv.yaml.
+projekty:
+  - nazwa: "Example: CV as code"
+    opis: "Generator of a versioned CV from YAML to HTML and PDF, bilingual, auto-deployed to GitHub Pages."
+
+# ksiazki — pominięte celowo: tytuły i autorzy są neutralne (dziedziczą z cv.yaml).
+
+# Źródła wiedzy — tłumaczymy nazwę, typ i opis; url dziedziczy z cv.yaml.
+zrodla_wiedzy:
+  - nazwa: "Example: Microsoft Learn"
+    typ: documentation
+    opis: "Official documentation and learning paths for .NET and Azure."
+
+jezyki:
+  - jezyk: English
+    poziom: B2
+  - jezyk: Polish
+    poziom: native
+
+zainteresowania:
+  - software architecture
+  - problem solving
+  - playing the accordion
+  - board games
+  - chess
+
+# Klauzula RODO (EN) -> cv.private.en.yaml (gitignored).

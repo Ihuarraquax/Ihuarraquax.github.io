@@ -1,0 +1,16 @@
+node_modules/
+dist/
+private/
+.DS_Store
+
+# Dane wrażliwe (telefon, RODO) — nakładka tylko dla wariantu "full".
+# Wzór struktury: cv.private.example.yaml (ten JEST w repo).
+cv.private.yaml
+cv.private.*.yaml
+!cv.private.example.yaml
+
+# Archiwum starych CV i materiały źródłowe — zawierają pełne dane osobowe.
+old/
+
+# Materiały źródłowe (certyfikaty, bilety) — nieużywane przez build.
+raw/

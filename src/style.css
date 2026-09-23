@@ -1,0 +1,217 @@
+/* ============================================================================
+   CV — style ekranowe + druk A4. Zmienne na górze sterują kolorystyką.
+   ============================================================================ */
+:root {
+  --accent: #2563eb;
+  --ink: #1a1a1a;
+  --muted: #5b6168;
+  --line: #e3e6ea;
+  --bg: #f4f5f7;
+  --tag-bg: #eef2ff;
+  --tag-ink: #3730a3;
+  --max: 820px;
+  --font: "Inter", "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.cv {
+  max-width: var(--max);
+  margin: 24px auto;
+  background: #fff;
+  padding: 40px 48px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .08), 0 8px 24px rgba(0, 0, 0, .06);
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* --- przełącznik języków ------------------------------------------------- */
+.lang-switch {
+  float: right;
+  display: flex;
+  gap: 4px;
+  margin-top: 4px;
+  font-size: 12px;
+}
+.lang-switch .lang {
+  padding: 3px 9px;
+  border-radius: 4px;
+  font-weight: 600;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  line-height: 1;
+}
+.lang-switch a.lang:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
+.lang-switch .lang.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+/* --- nagłówek ------------------------------------------------------------ */
+.cv-header { margin-bottom: 22px; }
+.cv-header h1 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -.5px;
+}
+.role-title {
+  margin: 2px 0 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--accent);
+}
+.contacts {
+  margin: 12px 0 0;
+  font-size: 13px;
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+.contacts .sep { color: var(--line); }
+.summary {
+  margin: 14px 0 0;
+  color: #333;
+  font-size: 13.5px;
+}
+/* odsyłacz do pełnej wizytówki online (tylko w CV/PDF) */
+.more {
+  margin: 12px 0 0;
+  font-size: 12.5px;
+  color: #444;
+  padding: 7px 12px;
+  background: var(--tag-bg);
+  border-left: 3px solid var(--accent);
+  border-radius: 5px;
+}
+.more a { font-weight: 600; }
+
+/* --- sekcje -------------------------------------------------------------- */
+.block { margin-top: 22px; }
+.block h2 {
+  margin: 0 0 12px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent);
+  padding-bottom: 5px;
+  border-bottom: 2px solid var(--line);
+}
+
+/* --- wpisy (praca / edukacja) ------------------------------------------- */
+.entry { margin-bottom: 14px; }
+.entry:last-child { margin-bottom: 0; }
+.entry-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+}
+.entry-head h3 { margin: 0; font-size: 14.5px; font-weight: 600; }
+.entry-head .org { font-weight: 600; color: var(--accent); }
+.dates {
+  font-size: 12.5px;
+  color: var(--muted);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.sub { margin: 2px 0 0; color: var(--muted); font-size: 13px; }
+.stack { margin: 6px 0 4px; display: flex; flex-wrap: wrap; gap: 5px; }
+.bullets { margin: 6px 0 0; padding-left: 18px; }
+.bullets li { margin: 2px 0; }
+
+/* --- tagi ---------------------------------------------------------------- */
+.tag {
+  display: inline-block;
+  background: var(--tag-bg);
+  color: var(--tag-ink);
+  font-size: 11.5px;
+  font-weight: 500;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin: 2px 4px 2px 0;
+}
+
+/* --- umiejętności -------------------------------------------------------- */
+.skills { display: grid; gap: 8px; }
+.skill-group { display: grid; grid-template-columns: 130px 1fr; gap: 8px; align-items: start; }
+.skill-cat { font-weight: 600; font-size: 13px; padding-top: 3px; }
+
+/* --- karty (certyfikaty / szkolenia) ------------------------------------ */
+.cards { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.card {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  padding: 8px 12px;
+  background: #fafbfc;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: 4px;
+}
+.card-title { font-weight: 600; font-size: 13.5px; }
+.card-desc { font-weight: 400; color: var(--muted); }
+.card-meta { font-size: 12.5px; color: var(--muted); white-space: nowrap; }
+
+/* --- książki ------------------------------------------------------------- */
+.books { list-style: none; margin: 0; padding: 0; display: grid; gap: 5px; }
+.book { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+.book-title { font-weight: 600; font-size: 13.5px; }
+.book-title::before { content: "📖  "; }
+.book-meta { font-size: 12.5px; color: var(--muted); white-space: nowrap; }
+/* --- listy inline -------------------------------------------------------- */
+.inline { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 20px; }
+.interests { margin: 0; color: #333; }
+
+/* --- RODO ---------------------------------------------------------------- */
+.rodo {
+  margin-top: 26px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+  font-size: 9.5px;
+  color: #9aa0a6;
+  line-height: 1.4;
+}
+
+/* ============================================================================
+   DRUK / PDF — A4
+   ============================================================================ */
+@page { size: A4; margin: 14mm 0; }
+
+@media print {
+  body { background: #fff; font-size: 10.5pt; }
+  .lang-switch { display: none; }
+  .cv {
+    max-width: none;
+    margin: 0;
+    padding: 0 16mm;
+    box-shadow: none;
+    border-radius: 0;
+  }
+  a { color: var(--ink); }
+  .card { background: #fff; break-inside: avoid; }
+  .entry, .book, .card, .skill-group { break-inside: avoid; }
+  .block { break-inside: avoid-page; }
+  .block h2 { break-after: avoid; }
+
+  /* CV ma się zmieścić na 1 stronie A4 — zacieśnione odstępy w druku. */
+  .cv-header { margin-bottom: 16px; }
+  .summary { margin-top: 10px; }
+  .more { margin-top: 8px; padding: 6px 11px; }
+  .block { margin-top: 15px; }
+  .rodo { margin-top: 16px; }
+}

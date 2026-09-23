@@ -1,0 +1,13 @@
+# ============================================================================
+#  WZÓR nakładki prywatnej. Skopiuj do `cv.private.yaml` (gitignored) i uzupełnij.
+#  Dane z tego pliku trafiają WYŁĄCZNIE do wariantu "full" (private/ -> PDF).
+#  Tłumaczenia: cv.private.<kod>.yaml (np. cv.private.en.yaml), też gitignored.
+#  Bez tych plików build działa normalnie — pola wrażliwe po prostu znikają.
+# ============================================================================
+
+basics:
+  contact:
+    phone: "+48 000 000 000"
+
+rodo: >
+  Klauzula RODO drukowana drobnym drukiem na końcu CV.
