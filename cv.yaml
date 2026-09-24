@@ -98,6 +98,9 @@ szkolenia:
   - nazwa: "Domain Drivers"
     organizator: devstyle
     url: "https://szkolenia.devstyle.pl/szkolenia/domain-drivers.html"
+  - nazwa: "DevUpgrade"
+    organizator: Bottega IT Minds
+    url: "https://bottega.com.pl/devupgrade"
   - nazwa: "Horyzont Lidera"
     organizator: devstyle
     url: "https://szkolenia.devstyle.pl/szkolenia/horyzont-lidera.html"
@@ -122,6 +125,9 @@ szkolenia:
   - nazwa: "Kubernetes Maestro"
     organizator: WKONTENERACH
     url: "https://kubernetesmaestro.pl/"
+  - nazwa: "Getting started with Azure Networking services"
+    organizator: Houssem Dellai
+    url: "https://www.udemy.com/course/azure-networking-services/"
   - nazwa: "10xdevs.pl"
     organizator: Przeprogramowani
     url: "https://www.10xdevs.pl/"
