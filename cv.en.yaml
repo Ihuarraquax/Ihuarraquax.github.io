@@ -59,12 +59,6 @@ skills:
   # - AI — dziedziczy
 
 # ----------------------------------------------------------------------------
-# Certyfikaty (wpis poglądowy — podmień razem z cv.yaml)
-# ----------------------------------------------------------------------------
-certyfikaty:
-  - nazwa: "Example: AZ-204 Developing Solutions for Microsoft Azure"
-
-# ----------------------------------------------------------------------------
 # Szkolenia — nazwy kursów to nazwy własne (polskie produkty szkoleniowe),
 # więc zostają, a w nawiasie dodajemy angielskie znaczenie.
 # Kursy o angielskich nazwach dziedziczą bez zmian.
