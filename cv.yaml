@@ -28,7 +28,7 @@ basics:
 # Doświadczenie zawodowe (najnowsze na górze). data_do: "obecnie" dla aktualnej.
 # ----------------------------------------------------------------------------
 experience:
-  - role: Fullstack .NET/Angular Developer - Tech Lead
+  - role: Software Developer
     company: Qodeca
     data_od: "2022-07"
     data_do: "obecnie"
@@ -77,6 +77,8 @@ skills:
     pozycje: ["Azure", "Kubernetes", "Docker", "GitOps", "IaC", "LGTM stack", "OpenTelemetry"]
   - kategoria: Frontend
     pozycje: ["Angular"]
+  - kategoria: CI/CD
+    pozycje: ["Azure DevOps"]
   - kategoria: Architektura i projektowanie
     pozycje: ["DDD", "Event storming", "Archetypy oprogramowania", "Mikroserwisy", "Event sourcing", "Event Driven Architecture", "Modularny monolit" ]
   - kategoria: AI
