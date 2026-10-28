@@ -181,6 +181,8 @@ ksiazki:
     autor: "Eric Freeman, Bert Bates, Kathy Sierra, Elisabeth Robson"
   - tytul: "Mikrousługi .NET: architektura konteneryzowanych aplikacji .NET"
     autor: "Microsoft"
+  - tytul: "Facilitating Software Architecture"
+    autor: "Andrew Harmel-Law"
 
 # ----------------------------------------------------------------------------
 # Źródła wiedzy — miejsca/twórcy, z których nauczyłeś się najwięcej.

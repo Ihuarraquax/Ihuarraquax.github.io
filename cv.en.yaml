@@ -3,27 +3,27 @@
 #  Wszystko inne (e-mail, linki, daty, tagi umiejętności, stack, tytuły
 #  i autorzy książek) DZIEDZICZY SIĘ automatycznie z cv.yaml.
 #
-#  Scalanie tablic jest WG INDEKSU — zachowuj tę samą kolejność i liczbę
+#  Scalanie tablic jest WG INDEKSU - zachowuj tę samą kolejność i liczbę
 #  wpisów co w cv.yaml. Wpis pominięty (`- {}`) = zostaje wersja polska.
 #  Nadmiarowe wpisy z końca cv.yaml dziedziczą się same, więc nakładka
 #  może być krótsza od bazy.
 # ============================================================================
 
 basics:
-  # name / title / website / contact / links — dziedziczą (neutralne językowo).
+  # name / title / website / contact / links - dziedziczą (neutralne językowo).
   location: Siedlce, Poland
   summary: >
     Holistic developer in the .NET, Azure and Angular world. I take part in the
     whole software development lifecycle. I value partnership-based relationships with
-    clients. I work in the spirit of DDD — I put a thorough understanding of the
+    clients. I work in the spirit of DDD - I put a thorough understanding of the
     business domain, analysis and design above technological solutions.
 
 # ----------------------------------------------------------------------------
-# Doświadczenie — role 1 i 2 są już po angielsku, więc tłumaczymy tylko punkty.
+# Doświadczenie - role 1 i 2 są już po angielsku, więc tłumaczymy tylko punkty.
 # ----------------------------------------------------------------------------
 experience:
   - punkty:
-      - Domain — a system supporting the management of a fitness club chain
+      - Domain - a system supporting the management of a fitness club chain
       - Designing and developing the architecture and infrastructure
       - Working with business stakeholders to refine requirements and design solutions
       - Analysis, modeling, development of new features and system maintenance
@@ -36,7 +36,7 @@ experience:
       - Web application supporting employee case management
 
 # ----------------------------------------------------------------------------
-# Wykształcenie — uczelnia w oficjalnej nazwie angielskiej.
+# Wykształcenie - uczelnia w oficjalnej nazwie angielskiej.
 # ----------------------------------------------------------------------------
 education:
   - stopien: Master's degree
@@ -47,7 +47,7 @@ education:
     uczelnia: Siedlce University of Natural Sciences and Humanities
 
 # ----------------------------------------------------------------------------
-# Umiejętności — tłumaczymy nazwy kategorii i te pozycje, które nie są
+# Umiejętności - tłumaczymy nazwy kategorii i te pozycje, które nie są
 # terminami angielskimi. Kategorie 1–3 i 5 (AI) dziedziczą bez zmian.
 # ----------------------------------------------------------------------------
 skills:
@@ -56,10 +56,10 @@ skills:
   - {} # Frontend
   - kategoria: Architecture & design
     pozycje: ["DDD", "Event storming", "Software archetypes", "Microservices", "Event sourcing", "Event Driven Architecture", "Modular monolith"]
-  # - AI — dziedziczy
+  # - AI - dziedziczy
 
 # ----------------------------------------------------------------------------
-# Szkolenia — nazwy kursów to nazwy własne (polskie produkty szkoleniowe),
+# Szkolenia - nazwy kursów to nazwy własne (polskie produkty szkoleniowe),
 # więc zostają, a w nawiasie dodajemy angielskie znaczenie.
 # Kursy o angielskich nazwach dziedziczą bez zmian.
 # ----------------------------------------------------------------------------
@@ -74,17 +74,17 @@ szkolenia:
   - nazwa: "Domain Driven Design: Pragmatycznie (DDD: Pragmatically)"
   - nazwa: "Modularny Monolit (Modular Monolith)"
   - nazwa: "Mikroserwisy .NET (.NET Microservices)"
-  # - Automation Maestro — dziedziczy
-  # - Kubernetes Maestro — dziedziczy
+  # - Automation Maestro - dziedziczy
+  # - Kubernetes Maestro - dziedziczy
 
 # ----------------------------------------------------------------------------
-# Projekty — tłumaczymy tylko opis; nazwa, stack i url dziedziczą z cv.yaml.
+# Projekty - tłumaczymy tylko opis; nazwa, stack i url dziedziczą z cv.yaml.
 # ----------------------------------------------------------------------------
 projekty:
   - opis: "Web application for generating personalised Christmas gift lists, with group collaboration and OpenAI API integration."
 
 # ----------------------------------------------------------------------------
-# Książki — tytuły i autorzy są neutralne (dziedziczą). Wyjątek: pozycja nr 8
+# Książki - tytuły i autorzy są neutralne (dziedziczą). Wyjątek: pozycja nr 8
 # to polskie wydanie, więc wstawiamy oryginalny tytuł angielski.
 # ----------------------------------------------------------------------------
 ksiazki:
@@ -107,16 +107,16 @@ ksiazki:
   - tytul: ".NET Microservices: Architecture for Containerized .NET Applications"
 
 # ----------------------------------------------------------------------------
-# Źródła wiedzy — tłumaczymy typ i te nazwy, które nie są nazwami własnymi.
+# Źródła wiedzy - tłumaczymy typ i te nazwy, które nie są nazwami własnymi.
 # ----------------------------------------------------------------------------
 zrodla_wiedzy:
   - typ: various # Bottega IT Minds
   - {} # DevStyle
   - {} # Better Software Design
   - {} # Patoarchitekci
-  - nazwa: "Oskar Dudycz — Pragmatically about programming"
-  # - DevMentors — dziedziczy
-  # - CodeOpinion — dziedziczy
+  - nazwa: "Oskar Dudycz - Pragmatically about programming"
+  # - DevMentors - dziedziczy
+  # - CodeOpinion - dziedziczy
 
 # ----------------------------------------------------------------------------
 # Języki obce
