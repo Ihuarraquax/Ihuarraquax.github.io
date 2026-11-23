@@ -227,12 +227,12 @@ a:hover { text-decoration: underline; }
 @page { size: A4; margin: 14mm 0; }
 
 @media print {
-  body { background: #fff; font-size: 10.5pt; }
+  body { background: #fff; font-size: 10pt; }
   .lang-switch { display: none; }
   .cv {
     max-width: none;
     margin: 0;
-    padding: 0 16mm;
+    padding: 0 14mm;
     box-shadow: none;
     border-radius: 0;
   }
@@ -254,8 +254,40 @@ a:hover { text-decoration: underline; }
     print-color-adjust: exact;
   }
   .summary { margin-top: 10px; }
-  .more { margin-top: 8px; padding: 7px 12px; }
+  .more { margin-top: 8px; padding: 5px 12px; }
   .more a { color: var(--accent); }
-  .block { margin-top: 15px; }
+  .block { margin-top: 12px; }
   .rodo { margin-top: 16px; }
+
+  /* Gęstszy tekst, wpisy i tagi. */
+  body { line-height: 1.4; }
+  .block h2 { margin-bottom: 8px; padding-bottom: 3px; }
+  .entry { margin-bottom: 9px; }
+  .stack { margin: 4px 0 2px; gap: 3px; }
+  .bullets { margin-top: 3px; }
+  .bullets li { margin: 0; }
+  .tag { padding: 0 6px; margin: 1px 3px 1px 0; font-size: 10.5px; }
+  .skills { gap: 4px; }
+  .skill-group { gap: 6px; }
+  .skill-cat { padding-top: 0; }
+
+  /* Wykształcenie: wpisy obok siebie. */
+  .education { display: grid; grid-template-columns: 1fr 1fr; column-gap: 28px; }
+  .education h2 { grid-column: 1 / -1; }
+  .education .entry { margin: 0; }
+  .education .entry-head { flex-wrap: wrap; column-gap: 8px; } /* daty pod tytułem, gdy brak miejsca */
+
+  /* Nagłówek: węższe zdjęcie i drobniejszy kontakt, żeby lokalizacja zmieściła się w jednej linii. */
+  .photo { width: 44mm; height: 44mm; }
+  .contacts { font-size: 11.5px; gap: 4px; margin-top: 8px; }
+
+  /* Krótkie sekcje (języki, zainteresowania): nagłówek obok treści, jeden wiersz. */
+  .compact {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    align-items: baseline;
+    gap: 6px;
+    margin-top: 10px;
+  }
+  .compact h2 { margin: 0; padding: 0; border: 0; }
 }

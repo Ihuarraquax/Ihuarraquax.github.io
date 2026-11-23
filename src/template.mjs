@@ -74,8 +74,9 @@ const range = (od, doo, L) =>
 
 const has = (a) => Array.isArray(a) && a.length > 0;
 
-const section = (title, body) =>
-  `<section class="block"><h2>${esc(title)}</h2>${body}</section>`;
+// cls: opcjonalna klasa modyfikatora (np. "compact" = zwarty układ w druku).
+const section = (title, body, cls = "") =>
+  `<section class="block${cls ? ` ${cls}` : ""}"><h2>${esc(title)}</h2>${body}</section>`;
 
 // --- sekcje (L = słownik etykiet dla języka) -----------------------------
 
@@ -98,7 +99,7 @@ const education = (items, L) =>
         <span class="dates">${range(e.data_od, e.data_do, L)}</span>
       </div>
       ${e.uczelnia ? `<p class="sub">${esc(e.uczelnia)}</p>` : ""}
-    </article>`).join(""));
+    </article>`).join(""), "education");
 
 const skills = (groups, L) =>
   !has(groups) ? "" : section(L.skills, `<div class="skills">${groups.map((g) => `
@@ -147,10 +148,10 @@ const zrodla_wiedzy = (items, L) =>
       </li>`).join("")}</ul>`);
 
 const jezyki = (items, L) =>
-  !has(items) ? "" : section(L.jezyki, `<ul class="inline">${items.map((j) => `<li><strong>${esc(j.jezyk)}</strong> — ${esc(j.poziom)}</li>`).join("")}</ul>`);
+  !has(items) ? "" : section(L.jezyki, `<ul class="inline">${items.map((j) => `<li><strong>${esc(j.jezyk)}</strong> — ${esc(j.poziom)}</li>`).join("")}</ul>`, "compact");
 
 const zainteresowania = (items, L) =>
-  !has(items) ? "" : section(L.zainteresowania, `<p class="interests">${items.map((i) => esc(i)).join(" · ")}</p>`);
+  !has(items) ? "" : section(L.zainteresowania, `<p class="interests">${items.map((i) => esc(i)).join(" · ")}</p>`, "compact");
 
 // przełącznik języków: [{code, href, active}]
 const langNav = (langs) =>

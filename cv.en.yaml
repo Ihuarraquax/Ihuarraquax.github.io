@@ -13,7 +13,7 @@ basics:
   # name / title / website / contact / links - dziedziczą (neutralne językowo).
   location: Siedlce, Poland
   summary: >
-    Holistic developer in the .NET, Azure and Angular world. I take part in the
+    Versatile engineer in the .NET, Azure and Angular world. I take part in the
     whole software development lifecycle. I value partnership-based relationships with
     clients. I work in the spirit of DDD - I put a thorough understanding of the
     business domain, analysis and design above technological solutions.
@@ -23,14 +23,12 @@ basics:
 # ----------------------------------------------------------------------------
 experience:
   - punkty:
-      - Domain - a system supporting the management of a fitness club chain
-      - Designing and developing the architecture and infrastructure
-      - Working with business stakeholders to refine requirements and design solutions
-      - Analysis, modeling, development of new features and system maintenance
-      - Rolling out observability (monitoring, alerting, logging, tracing) across the system
-      - Migration from App Service/VMs to modern infrastructure based on Kubernetes, IaC and GitOps
-      - Mentoring
-      - Internal training on AI, software archetypes and observability
+      - Domain - a management system for a fitness club chain (memberships, payments, bookings, classes)
+      - Microservice architecture - ~50 services and ~150 workloads on AKS, messaging via Service Bus
+      - Refining requirements with business stakeholders; domain modeling (DDD), development and maintenance
+      - Migration from App Service/VMs to AKS - Terraform, GitOps (ArgoCD), Security (Zero Trust, Azure Workload Identity)
+      - Rolling out observability (monitoring, alerting, logging, tracing) across the whole system
+      - Mentoring and internal training on AI, software archetypes and observability
   - punkty:
       - Building a system for running medical simulations
       - Web application supporting employee case management
@@ -48,12 +46,13 @@ education:
 
 # ----------------------------------------------------------------------------
 # Umiejętności - tłumaczymy nazwy kategorii i te pozycje, które nie są
-# terminami angielskimi. Kategorie 1–3 i 5 (AI) dziedziczą bez zmian.
+# terminami angielskimi. Kategorie 1–4 i 6 (AI) dziedziczą bez zmian.
 # ----------------------------------------------------------------------------
 skills:
   - {} # Backend
   - {} # DevOps / Cloud
   - {} # Frontend
+  - {} # CI/CD
   - kategoria: Architecture & design
     pozycje: ["DDD", "Event storming", "Software archetypes", "Microservices", "Event sourcing", "Event Driven Architecture", "Modular monolith"]
   # - AI - dziedziczy

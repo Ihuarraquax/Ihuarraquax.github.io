@@ -6,9 +6,9 @@
 
 basics:
   name: Hubert Zabłocki
-  title: Software Engineer (.NET / Angular / Azure)
+  title: Senior .NET Developer (Azure / Kubernetes / Angular)
   summary: >
-    Wszechstronny programista w świecie .NET, Azure i Angular. Uczestniczę w całym cyklu życia oprogramowania. Cenie sobie partnerskie relacje z klientami. Działam w duchu DDD - stawiam dogłebne poznanie domeny biznesowej, analizę i projektowanie ponad rozwiązania technologiczne.
+    Wszechstronny programista w świecie .NET, Azure i Angular. Uczestniczę w całym cyklu życia oprogramowania. Cenię sobie partnerskie relacje z klientami. Działam w duchu DDD - stawiam dogłębne poznanie domeny biznesowej, analizę i projektowanie ponad rozwiązania technologiczne.
   location: Siedlce, Polska
   # Adres strony-wizytówki (GitHub Pages). W CV pojawia się jako elegancki
   # odsyłacz "po więcej" (certyfikaty, projekty, książki, źródła wiedzy).
@@ -28,20 +28,18 @@ basics:
 # Doświadczenie zawodowe (najnowsze na górze). data_do: "obecnie" dla aktualnej.
 # ----------------------------------------------------------------------------
 experience:
-  - role: Software Developer
+  - role: Senior .NET Developer
     company: Qodeca
     data_od: "2022-07"
     data_do: "obecnie"
-    stack: [".NET", "Angular", "Azure", "Kubernetes", "Claude"]
+    stack: [".NET", "Angular", "Azure", "Kubernetes", "Terraform", "ArgoCD", "Service Bus", "Claude"]
     punkty:
-      - Domena - System wspomagający zarządzanie siecią klubów fitness
-      - Projektowanie i rozwój architektury i infrastruktury
-      - Współpraca z interesariuszami biznesowymi w celu doprecyzowania wymagań i zaprojektowania rozwiązań
-      - Analiza, modelowanie, rozwój nowych funkcjonalności i utrzymanie systemu
-      - Wdrożenie observability (monitoring, alerting, logowanie, tracing) w systemie
-      - Migracja z App Service/VMs do nowoczesnej infrastruktury opartej na Kubernetes, IaC, GitOps
-      - Mentoring
-      - Wewnętrzne szkolenia z AI, Archetypów oprogramowania, Observability
+      - Domena - system do zarządzania siecią klubów fitness (członkostwa, płatności, rezerwacje, zajęcia)
+      - Architektura mikroserwisowa - ok. 50 serwisów i 150 workloadów na AKS, komunikacja przez Service Bus
+      - Współpraca z biznesem przy doprecyzowaniu wymagań; modelowanie domeny (DDD), rozwój i utrzymanie
+      - Migracja z App Service/VM na AKS - Terraform, GitOps (ArgoCD), bezpieczeństwo (Zero Trust, Azure Workload Identity)
+      - Wdrożenie observability (monitoring, alerting, logowanie, tracing) w całym systemie
+      - Mentoring oraz wewnętrzne szkolenia z AI, archetypów oprogramowania i observability
   - role: Fullstack Developer
     company: BCODERS S.A.
     data_od: "2020-07"
@@ -72,9 +70,9 @@ education:
 # ----------------------------------------------------------------------------
 skills:
   - kategoria: Backend
-    pozycje: [".NET", "EF Core", "TestContainers"]
+    pozycje: ["C#", ".NET", "ASP.NET Core", "EF Core", "SQL Server", "MediatR", "Azure Service Bus", "Redis", "xUnit", "TestContainers"]
   - kategoria: DevOps / Cloud
-    pozycje: ["Azure", "Kubernetes", "Docker", "GitOps", "IaC", "LGTM stack", "OpenTelemetry"]
+    pozycje: ["Azure", "Kubernetes (AKS)", "Docker", "Terraform", "Helm", "ArgoCD", "GitOps", "OpenTelemetry", "Grafana", "Prometheus", "Loki", "Tempo"]
   - kategoria: Frontend
     pozycje: ["Angular"]
   - kategoria: CI/CD
@@ -150,7 +148,7 @@ projekty:
 # ----------------------------------------------------------------------------
 ksiazki:
   - tytul: "Domain-Driven Design: Tackling Complexity in the Heart of Software"
-    autor: "Robert C. Martin"
+    autor: "Eric Evans"
   - tytul: "Learning Domain-Driven Design: Aligning Software Architecture and Business Strategy"
     autor: "Vlad Khononov"
   - tytul: "Designing Data-Intensive Applications: The Big Ideas Behind Reliable, Scalable, and Maintainable Systems"
@@ -171,7 +169,7 @@ ksiazki:
     autor: "Len Silverston"
   - tytul: "Web Application Security: Exploitation and Countermeasures for Modern Web Applications"
     autor: "Andrew Hoffman"
-  - tytul: "Asynchronicznosc i wielowatkowosc w jezyku C"
+  - tytul: "Asynchroniczność i wielowątkowość w języku C#"
     autor: "Grzegorz Lang"
   - tytul: "Refactoring: Improving the Design of Existing Code"
     autor: "Martin Fowler"
